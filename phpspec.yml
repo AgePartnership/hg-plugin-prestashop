@@ -1,0 +1,4 @@
+suites:
+    client_suite:
+        namespace: TheMarketingLab\Hg\Plugins\PrestaShop
+        psr4_prefix: TheMarketingLab\Hg\Plugins\PrestaShop

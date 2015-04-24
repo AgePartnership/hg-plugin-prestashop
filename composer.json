@@ -1,0 +1,22 @@
+{
+    "name": "themarketinglab/hg-plugin-prestashop",
+    "description": "Hg plugin for Prestashop",
+    "authors": [
+        {
+            "name": "Will Otterburn",
+            "email": "will@themarketinglab.co.uk"
+        }
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "~2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheMarketingLab\\Hg\\Plugins\\": "src/"
+        }
+    },
+    "require": {
+        "themarketinglab/hg-client": "0.1.*",
+        "symfony/yaml": "~2.6"
+    }
+}
