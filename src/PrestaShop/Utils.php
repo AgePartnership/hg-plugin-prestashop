@@ -18,6 +18,6 @@ class Utils
 
     public static function getAppId()
     {
-        return 'appId';
+        return _HG_APPID_;
     }
 }
