@@ -29,7 +29,7 @@ class EventPlugin
 
     public function publish($sessionId)
     {
-        if ($sessionId !== null) {
+        if (!empty($sessionId)) {
             $this->eventClient->publish($this->makeEvent($sessionId));
         }
         
