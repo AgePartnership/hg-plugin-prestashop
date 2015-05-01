@@ -1,36 +1,37 @@
 <?php
 
-namespace TheMarketingLab\Hg\Plugins\PrestaShop\Plugin;
+namespace TheMarketingLab\Hg\Plugins\PrestaShop;
 
 use Guzzle\Http\Client as GuzzleClient;
 use TheMarketingLab\Hg\Events\EventClient;
+use TheMarketingLab\Hg\Events\Event;
 use Symfony\Component\HttpFoundation\Request;
 
 class EventPlugin
 {
-    private $controller;
     private $eventClient;
 
-    public function __construct($controller, $url)
+    public function __construct($url)
     {
-        $this->controller = $controller;
         $guzzle = new GuzzleClient($url);
         $this->eventClient = new EventClient($guzzle);
     }
 
-    private function makeEvent()
+    private function makeEvent($sessionId)
     {
-        $sessionId = Utils::getSessionId($this->$controller);
         $appId = Utils::getAppId();
         $name = "request";
         $request = Request::createFromGlobals();
-        $event = new Event($appId, $sessionId, $name, $request, Utils::getTimeStamp());
+        $event = new Event(Utils::getTimeStamp(), $appId, $sessionId, $name, null, $request);
 
         return $event;
     }
 
-    public function publish()
+    public function publish($sessionId)
     {
-        $this->eventClient->publish($this->makeEvent());
+        if ($sessionId !== null) {
+            $this->eventClient->publish($this->makeEvent($sessionId));
+        }
+        
     }
 }
