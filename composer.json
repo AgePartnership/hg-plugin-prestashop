@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "themarketinglab/hg-client": "0.1.*",
+        "themarketinglab/hg-client": "dev-feature/ViewClient",
         "symfony/yaml": "~2.6"
     }
 }

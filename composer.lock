@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "39d63bcd83dece141e257b1a71ce9905",
+    "hash": "c4fc8ad99a7d12a451820dd46f9a5d7d",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -266,16 +266,16 @@
         },
         {
             "name": "themarketinglab/hg-client",
-            "version": "v0.1.0",
+            "version": "dev-feature/ViewClient",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheMarketingLab/hg-client-php.git",
-                "reference": "e05b091176e9cd584dfb6d70cd028e51c6bdcc97"
+                "reference": "da5d9ec4f43b8187d8d87ee242dd069b19623f0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheMarketingLab/hg-client-php/zipball/e05b091176e9cd584dfb6d70cd028e51c6bdcc97",
-                "reference": "e05b091176e9cd584dfb6d70cd028e51c6bdcc97",
+                "url": "https://api.github.com/repos/TheMarketingLab/hg-client-php/zipball/da5d9ec4f43b8187d8d87ee242dd069b19623f0e",
+                "reference": "da5d9ec4f43b8187d8d87ee242dd069b19623f0e",
                 "shasum": ""
             },
             "require": {
@@ -303,7 +303,7 @@
                 }
             ],
             "description": "Hg client library for PHP",
-            "time": "2015-04-23 07:36:04"
+            "time": "2015-05-08 12:50:55"
         }
     ],
     "packages-dev": [
@@ -978,7 +978,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "themarketinglab/hg-client": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
