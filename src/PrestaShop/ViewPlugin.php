@@ -72,6 +72,6 @@ class ViewPlugin implements ViewPluginInterface
             $data['test_id'] = $test->getId();
             $data['test_variant'] =  $test->getVariant();
         }
-        $this->getDBH()->insert('hg_view', $data, true, false, Db::REPLACE, false);
+        $this->getDBH()->insert('hg_view', $data, true, false, \Db::REPLACE, false);
     }
 }
