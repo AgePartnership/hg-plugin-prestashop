@@ -32,7 +32,8 @@ class ViewPluginSpec extends ObjectBehavior
 
     function it_should_get_existing_view_from_database(ViewInterface $view)
     {
-
+        $view->getSegment()->willReturn('default');
+        $view->getTest()->
         $this->getViewFromDatabase(12345)->should
     }
 
