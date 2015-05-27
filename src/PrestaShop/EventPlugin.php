@@ -17,20 +17,20 @@ class EventPlugin
         $this->eventClient = new EventClient($guzzle);
     }
 
-    private function makeEvent($sessionId)
+    private function makeEvent($user)
     {
         $appId = Utils::getAppId();
         $name = "request";
         $request = Request::createFromGlobals();
-        $event = new Event(Utils::getTimeStamp(), $appId, $sessionId, $name, null, $request);
+        $event = new Event(Utils::getTimeStamp(), $appId, $user->getSessionId(), $name, $user->getView(), $request);
 
         return $event;
     }
 
-    public function publish($sessionId)
+    public function publish($user)
     {
-        if (!empty($sessionId)) {
-            $this->eventClient->publish($this->makeEvent($sessionId));
+        if (!empty($user->getIdGuest())) {
+            $this->eventClient->publish($this->makeEvent($user));
         }
         
     }
