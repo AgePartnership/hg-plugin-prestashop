@@ -23,7 +23,7 @@ class User
 
     private function getFromViewTable($where)
     {
-        $basesql = "SELECT session_id, id_guest, id_customer, segment, test_id, test_variant FROM hg_user WHERE $where LIMIT 1";
+        $sql = "SELECT session_id, id_guest, id_customer, segment, test_id, test_variant FROM hg_user WHERE $where LIMIT 1";
         $result = $this->dbh->executeS($sql);
         if (empty($result)) {
             $result = false;
