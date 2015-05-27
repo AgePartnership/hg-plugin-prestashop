@@ -30,12 +30,12 @@ class User
         } else {
             $result = $result[0];
             $this->session_id = $result['session_id'];
-            if ($results['test_id'] === null) {
+            if ($result['test_id'] === null) {
                 $test = null;
             } else {
-                $test = new Test($results['test_id'], $results['test_variant']);
+                $test = new Test($result['test_id'], $result['test_variant']);
             }
-            $view = new View($results['segment'], $test);
+            $view = new View($result['segment'], $test);
             $this->setView($view);
             $result = true;
         }
@@ -90,7 +90,7 @@ class User
 
     public function getSessionId()
     {
-        return $this->sessionId;
+        return $this->session_id;
     }
 
     public function getIdGuest()
