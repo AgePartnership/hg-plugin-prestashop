@@ -29,7 +29,7 @@ class EventPlugin
 
     public function publish($user)
     {
-        if (!empty($user->getIdGuest())) {
+        if ($user->getIdGuest()) {
             $this->eventClient->publish($this->makeEvent($user));
         }
         
