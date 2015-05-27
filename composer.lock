@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f10c2a4d99296b81b0d29a6e625d9155",
+    "hash": "2d6899a63c44896f5e2d56f604db1b2a",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -266,7 +266,7 @@
         },
         {
             "name": "themarketinglab/hg-client",
-            "version": "dev-master",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheMarketingLab/hg-client-php.git",
@@ -978,9 +978,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "themarketinglab/hg-client": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

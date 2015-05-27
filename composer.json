@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "themarketinglab/hg-client": "dev-master",
+        "themarketinglab/hg-client": "0.2.0",
         "symfony/yaml": "~2.6"
     }
 }
