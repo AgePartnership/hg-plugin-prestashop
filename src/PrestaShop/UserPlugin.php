@@ -17,8 +17,7 @@ class UserPlugin
 
     public function __construct($url, $dbh)
     {
-        $client = new GuzzleClient($url);
-        $this->client = new ViewClient($client);
+        $this->client = ViewClient::create($url);
         $this->dbh = $dbh;
     }
 
