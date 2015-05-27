@@ -30,7 +30,7 @@ class UserPlugin
             $view = $this->getUser()->setView(new View('default'));
         }
         $view = $this->getClient()->update($view);
-        $this->getUser->setView($view);
+        $this->getUser()->setView($view);
         return $this->getUser();
     }
 
