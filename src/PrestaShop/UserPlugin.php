@@ -25,13 +25,13 @@ class UserPlugin
     public function loadUser($id_guest, $id_customer)
     {
         $this->user = new User($this->getDBH(), $id_guest, $id_customer);
-        //$view = $this->getClient()->get($this->getUser()->getView());
-        //$this->getUser->setView($view);
+        $view = $this->getUser()->getView();
         // Mock View Atm
-        if ($this->getUser()->getView() === null) {
-            $this->getUser()->setView(new View('default'));
+        if ($view === null) {
+            $view = $this->getUser()->setView(new View('default'));
         }
-
+        $view = $this->getClient()->update($view);
+        $this->getUser->setView($view);
         return $this->getUser();
     }
 

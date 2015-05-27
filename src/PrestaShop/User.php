@@ -8,7 +8,7 @@ use TheMarketingLab\Hg\Views\View;
 class User
 {
     private $dbh;
-    private $sessionId;
+    private $session_id;
     private $id_guest;
     private $id_customer;
     private $view;
@@ -16,8 +16,8 @@ class User
     public function __construct($dbh, $id_guest, $id_customer)
     {
         $this->dbh = $dbh;
-        $this->id_guest = empty($id_guest) ? null : $id_guest;
-        $this->id_customer = empty($id_customer) ? null : $id_customer;
+        $this->setIdGuest(empty($id_guest) ? null : $id_guest);
+        $this->setIdCustomer(empty($id_customer) ? null : $id_customer);
         $this->load();
     }
 
@@ -80,6 +80,7 @@ class User
     public function setView($view)
     {
         $this->view = $view;
+        return $view;
     }
 
     public function getView()
@@ -92,8 +93,40 @@ class User
         return $this->sessionId;
     }
 
-    private function store()
+    public function getIdGuest()
     {
+        return $this->id_guest;
+    }
 
+    public function setIdGuest($id)
+    {
+        $this->id_guest = $id;
+    }
+
+    public function getIdCustomer()
+    {
+        return $this->id_customer;
+    }
+
+    public function setIdCustomer($id)
+    {
+        $this->id_customer = $id;
+    }
+
+    public function store()
+    {
+        $data = array(
+            'session_id' => $this->getSessionId(),
+            'id_guest' => $this->getIdGuest(),
+            'id_customer' => $this->getIdCustomer(),
+            'segment' => $this->getView()->getSegment()
+        );
+        $test = $this->getView()->getTest();
+        if ($test !== null) {
+            $data['test_id'] = $test->getId();
+            $data['test_variant'] =  $test->getVariant();
+        }
+
+        $this->dbh->insert('hg_user', $data, true, false, \Db::REPLACE, false);
     }
 }
