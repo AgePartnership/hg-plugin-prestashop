@@ -35,6 +35,7 @@ class User
             } else {
                 $test = new Test($result['test_id'], $result['test_variant']);
             }
+            $segment = $result['segment'] ? $result['segment'] : 'default';
             $view = new View($result['segment'], $test);
             $this->setView($view);
             $result = true;

@@ -16,7 +16,12 @@
         }
     },
     "require": {
-        "themarketinglab/hg-client": "~0.2",
+        "themarketinglab/hg-client": "0.3.*@dev",
         "symfony/yaml": "~2.6"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-feature/events-v2": "0.2.x-dev"
+        }
     }
 }

@@ -2,9 +2,8 @@
 
 namespace TheMarketingLab\Hg\Plugins\PrestaShop;
 
-use TheMarketingLab\Hg\Tests\Test;
+use TheMarketingLab\Hg\ConfigurationInterface;
 use TheMarketingLab\Hg\Views\View;
-use Guzzle\Http\Client as GuzzleClient;
 use TheMarketingLab\Hg\Views\ViewClient;
 
 class UserPlugin
@@ -15,9 +14,9 @@ class UserPlugin
     private $session_id;
     private $user;
 
-    public function __construct($url, $dbh)
+    public function __construct(ConfigurationInterface $config, $dbh)
     {
-        $this->client = ViewClient::create($url);
+        $this->client = new ViewClient($config);
         $this->dbh = $dbh;
     }
 
