@@ -10,8 +10,8 @@ class Utils
         return time();
     }
 
-    public static function getAppId()
+    public static function getAccessToken()
     {
-        return _HG_APPID_;
+        return _HG_ACCESSTOKEN_;
     }
 }
