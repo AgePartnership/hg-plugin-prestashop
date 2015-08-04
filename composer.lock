@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1fc2773236c72013c653490f73bc6a98",
+    "hash": "216afd62e626223daf686d6a2b2a2f2b",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -263,16 +263,16 @@
         },
         {
             "name": "themarketinglab/hg-client",
-            "version": "dev-feature/events-v2",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheMarketingLab/hg-client-php.git",
-                "reference": "b12dba8251a3c117ba3692cb9b48b5c39d188974"
+                "reference": "35763b75f152bf7eaacccf0a5304fdc949f0960b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheMarketingLab/hg-client-php/zipball/b12dba8251a3c117ba3692cb9b48b5c39d188974",
-                "reference": "b12dba8251a3c117ba3692cb9b48b5c39d188974",
+                "url": "https://api.github.com/repos/TheMarketingLab/hg-client-php/zipball/35763b75f152bf7eaacccf0a5304fdc949f0960b",
+                "reference": "35763b75f152bf7eaacccf0a5304fdc949f0960b",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +305,7 @@
                 }
             ],
             "description": "Hg client library for PHP",
-            "time": "2015-07-27 11:13:00"
+            "time": "2015-08-04 10:56:04"
         }
     ],
     "packages-dev": [
@@ -977,9 +977,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "themarketinglab/hg-client": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
