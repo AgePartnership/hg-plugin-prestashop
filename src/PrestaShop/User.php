@@ -12,6 +12,7 @@ class User
     private $id_guest;
     private $id_customer;
     private $view;
+    private $is_new_session;
     
     public function __construct($dbh, $id_guest, $id_customer)
     {
@@ -129,5 +130,17 @@ class User
         }
 
         $this->dbh->insert('hg_user', $data, true, false, \Db::REPLACE, false);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isNewSession($is_new_session = null)
+    {
+        if (!is_null($is_new_session)) {
+            $this->is_new_session = !!$is_new_session;
+        }
+
+        return $this->is_new_session;
     }
 }

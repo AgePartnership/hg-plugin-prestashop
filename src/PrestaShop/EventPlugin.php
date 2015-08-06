@@ -16,20 +16,18 @@ class EventPlugin
         $this->eventClient = new EventClient($config);
     }
 
-    private function makeEvent(User $user)
+    private function makeEvent($collection, User $user, array $data = array())
     {
-        $collection = "request";
         $request = Request::createFromGlobals();
-        $data = array();
         $event = new Event(Utils::getTimeStamp(), $user->getSessionId(), $collection, $data, $user->getView(), $request);
 
         return $event;
     }
 
-    public function publish(User $user)
+    public function publish($collection, User $user, array $data = array())
     {
         if ($user->getIdGuest()) {
-            $this->eventClient->publish($this->makeEvent($user));
+            $this->eventClient->publish($this->makeEvent($collection, $user, $data));
         }
         
     }
