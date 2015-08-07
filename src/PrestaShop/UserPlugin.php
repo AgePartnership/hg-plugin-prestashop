@@ -26,6 +26,7 @@ class UserPlugin
         $view = $this->getUser()->getView();
         // Mock View Atm
         if ($view === null) {
+            $this->getUser()->isNewSession(true);
             $view = $this->getUser()->setView(new View('default'));
         }
         $view = $this->getClient()->update($view);
@@ -33,6 +34,9 @@ class UserPlugin
         return $this->getUser();
     }
 
+    /**
+     * @return User
+     */
     public function getUser()
     {
         return $this->user;
