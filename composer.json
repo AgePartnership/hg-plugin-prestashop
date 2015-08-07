@@ -18,10 +18,5 @@
     "require": {
         "themarketinglab/hg-client": "~0.3.0",
         "symfony/yaml": "~2.6"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-feature/publish": "0.3.x-dev"
-        }
     }
 }
